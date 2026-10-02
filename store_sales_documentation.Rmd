@@ -1,5 +1,5 @@
 ---
-title: "store_sales_documentation.Rmd"
+title: "Store Sales Analysis Script Documentation"
 author: "Nnedi Okafor"
 output: html_document
 ---
