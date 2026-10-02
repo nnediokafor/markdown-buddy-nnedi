@@ -1,0 +1,123 @@
+---
+title: "Store Sales Analysis Script Documentation"
+author: "Nnedi Okafor"
+output: html_document
+---
+
+AI Assistance Declaration: I used ChatGPT (GPT-5.6 Sol) for document structure, wording, Markdown formatting, and code-block examples. Prompts used are documented in `AI_Appendix.md`. I manually reviewed the document and will preview or knit it in RStudio or Posit Cloud before submission. All final calculations are done by myself. I am responsible for the accuracy and originality of this work.
+
+# Purpose
+
+This document explains the purpose, structure, inputs, analysis steps, and outputs of the `store_sales_analysis.R` script.
+
+The script works with a **synthetic store sales dataset**. Its purpose is to practise simple data analysis in R and show how an R script can be documented clearly using R Markdown.
+
+# Script Being Documented
+
+`store_sales_analysis.R`
+
+# Inputs
+
+The script uses a synthetic dataset called `store_data`.
+
+The dataset contains:
+
+- **Store Area** - size of the store
+- **Items Available** - number of items available in the store
+- **Daily Customer Count** - number of customers visiting the store in a day
+- **Store Sales** - sales value for the store
+
+No real or personal data is used.
+
+# Main Tasks
+
+The script performs four main tasks:
+
+1. reviews the dataset
+2. calculates summary information
+3. examines the relationship between selected variables
+4. creates a scatter plot
+
+# Code Documentation
+
+## 1. Review the Data
+
+```{r eval=FALSE}
+summary(store_data)
+```
+
+The `summary()` function gives a quick statistical overview of the variables in `store_data`. For numeric variables, R normally reports the minimum, first quartile, median, mean, third quartile, and maximum.
+
+## 2. Calculate Average Store Sales
+
+```{r eval=FALSE}
+mean(store_data$Store_Sales)
+```
+
+The `mean()` function calculates the average value of the `Store_Sales` variable. The final numerical result should be produced and checked directly in R rather than supplied by AI.
+
+## 3. Check Correlation
+
+```{r eval=FALSE}
+cor(
+  store_data$Items_Available,
+  store_data$Store_Sales
+)
+```
+
+The `cor()` function calculates the correlation between `Items_Available` and `Store_Sales`. A positive value indicates that the variables tend to move in the same direction, a negative value indicates that they tend to move in opposite directions, and a value near zero suggests little linear relationship.
+
+## 4. Create a Scatter Plot
+
+```{r eval=FALSE}
+plot(
+  store_data$Items_Available,
+  store_data$Store_Sales,
+  xlab = "Items Available",
+  ylab = "Store Sales",
+  main = "Items Available and Store Sales"
+)
+```
+
+This creates a scatter plot with Items Available on the horizontal axis and Store Sales on the vertical axis.
+
+# Outputs
+
+The script is expected to produce:
+
+- summary statistics
+- an average store sales value
+- a correlation result
+- a scatter plot
+
+This documentation does not insert calculated values because the assignment requires calculations to be completed and checked directly by the student.
+
+# Why `eval=FALSE` Is Used
+
+The code chunks use `eval=FALSE`. This means the R code is displayed in the knitted document but is not automatically executed during knitting. This allows the documentation to show the analysis code even if the dataset is not loaded in the knitting environment.
+
+# Requirements
+
+The analysis can be completed with R and RStudio or Posit Cloud. The example code uses base R, so no additional package is required for the basic analysis.
+
+# Validation
+
+I checked that:
+
+- the YAML header is present
+- the output format is `html_document`
+- heading levels are consistent
+- R code chunks use valid R Markdown syntax
+- inputs and outputs are clearly identified
+- no real data is included
+- no numerical result is invented by AI
+
+Before submission, I will preview or knit this file in RStudio or Posit Cloud and confirm that it renders correctly.
+
+# Refinements Made
+
+I improved the document by separating each analysis task into its own section, adding plain-language explanations after each code block, explaining why `eval=FALSE` is used, clarifying the expected outputs, and adding a validation section.
+
+# Conclusion
+
+The `store_sales_analysis.R` script is a simple example of how R can be used to review and summarize a synthetic dataset. This R Markdown file makes the script easier to understand by clearly explaining the purpose, inputs, main functions, outputs, and validation process.
